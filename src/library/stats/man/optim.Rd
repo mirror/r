@@ -15,6 +15,7 @@
   General-purpose optimization based on Nelder--Mead, quasi-Newton and
   conjugate-gradient algorithms. It includes an option for
   box-constrained optimization and simulated annealing.
+  More recent codes exist. See Schwendinger and Borchers (2023).
 }
 \usage{
 optim(par, fn, gr = NULL, \dots,
@@ -67,6 +68,8 @@ optimHess(par, fn, gr = NULL, \dots, control = list())
   Beale--Sorenson updates).  Conjugate gradient methods will generally
   be more fragile than the BFGS method, but as they do not store a
   matrix they may be successful in much larger optimization problems.
+  Package \code{optimx} has the much more reliable \code{Rcgmin()},
+  that the originator of \code{CG} recommends instead.
 
   Method \code{"L-BFGS-B"} is that of Byrd \emph{et. al.} (1995) which
   allows \emph{box constraints}, that is each variable can be given a lower
@@ -254,6 +257,10 @@ optimHess(par, fn, gr = NULL, \dots, control = list())
 
   Nocedal, J. and Wright, S. J. (1999) \emph{Numerical Optimization}.
   Springer.
+	
+  Florian Schwendinger, Hans W. Borchers (2023). \emph{CRAN Task View: 
+  Optimization and Mathematical Programming.} Version 2023-02-16. 
+  URL https://CRAN.R-project.org/view=Optimization.	
 }
 
 \seealso{
